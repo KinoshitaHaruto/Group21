@@ -51,7 +51,7 @@ img {
 
 .header-logo {
     display: block;
-    width: 100px;
+    width: 170px;
 }
 
 .site-menu ul {
@@ -70,6 +70,9 @@ img {
     transition: color 0.3s ease; 
 }
 
+.site-menu ul li a:hover {
+    color: #007bff; 
+}
 
 
 .btn {
