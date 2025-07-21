@@ -2,10 +2,18 @@
 
 /* 学部・学科ページのタイトルセクション */
 .title {
-    /* common.cssで共通のスタイルは定義済み */
-    background-image: url(../images/faculty.png); /* 固有の背景画像 */
-    text-shadow: 1px 1px 10px #4b2c14; /* 固有のテキストシャドウ */
-    /* 重複していた align-items: center; はcommon.cssで既に定義されているため削除 */
+    height: 310px;
+    background-image: url(../images/faculty.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 10px #4b2c14;
 }
 
 .title h1 {
