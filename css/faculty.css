@@ -1,29 +1,28 @@
+@charset "utf-8";
+
+/* 学部・学科ページのタイトルセクション */
 .title {
-    height: 310px;
-    background-image: url(../images/faculty.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
-    color: #ffffff;
-    text-shadow: 1px 1px 10px #4b2c14;
+    /* common.cssで共通のスタイルは定義済み */
+    background-image: url(../images/faculty.png); /* 固有の背景画像 */
+    text-shadow: 1px 1px 10px #4b2c14; /* 固有のテキストシャドウ */
+    /* 重複していた align-items: center; はcommon.cssで既に定義されているため削除 */
 }
 
 .title h1 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 32pt;
-    font-weight: bold;
+    /* font-family, font-size, font-weightはcommon.cssで定義されているか、デフォルト値を使用 */
+    /* common.cssの .title h1 に margin-bottom: 10px; があるため、必要に応じて上書き */
+    margin-bottom: 0; /* access.cssとの違いを明確にするため */
 }
 
 .title p {
-    font-size: 14pt;
-    margin-top: 15px;
+    /* font-sizeはcommon.cssで定義済み */
+    margin-top: 15px; /* 固有のマージン */
+    text-align: center; /* 念のため明示 */
+    max-width: none; /* access.cssのmax-widthを打ち消す場合 */
+    padding: 0; /* access.cssのpaddingを打ち消す場合 */
 }
 
+/* 特徴セクション */
 .feature {
     display: flex;
     flex-direction: row;
@@ -71,6 +70,7 @@
     margin-top: 25px;
 }
 
+/* 動画セクション */
 .movie {
     width: 930px;
     max-width: 90%;
@@ -110,6 +110,43 @@
     margin-top: 20px;
 }
 
-.footer {
-    margin-top: 100px;
+/* フッターセクション (common.cssに完全に移動済みのため、ここでは削除) */
+/* .footer {
+    margin-top: 100px; 
+} */
+
+/* --- レスポンシブデザインのためのメディアクエリ (学部・学科固有) --- */
+@media (max-width: 800px) {
+    .feature {
+        flex-direction: column; /* モバイルでは縦並び */
+        align-items: center; /* 中央寄せ */
+        margin-top: 40px; /* モバイルでの調整 */
+    }
+
+    .feature-text {
+        margin-right: 0; /* モバイルではマージンをリセット */
+        max-width: 100%; /* モバイルでは幅を最大に */
+        text-align: center; /* テキストを中央寄せ */
+    }
+    .feature-text h2::after {
+        margin-left: auto; /* 線を中央寄せ */
+        margin-right: auto;
+    }
+
+    .reverse {
+        flex-direction: column; /* モバイルでは縦並び */
+    }
+
+    .reverse .feature-text {
+        margin-left: 0; /* モバイルではマージンをリセット */
+    }
+
+    .movie {
+        padding: 30px 20px; /* モバイルでのパディング調整 */
+        margin-top: 40px; /* モバイルでの調整 */
+    }
+
+    .movie iframe {
+        height: 250px; /* モバイルでのiframeの高さ調整 */
+    }
 }
