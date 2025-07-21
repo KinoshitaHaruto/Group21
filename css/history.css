@@ -113,3 +113,18 @@
 .footer {
     margin-top: 100px;
 }
+
+.feature-container {
+    display: flex;          /* これで中の要素が横並びになる */
+    align-items: center;    /* 要素の上下位置を中央に揃える */
+    gap: 20px;              /* 画像とテキストの間に30pxの隙間を空ける */
+}
+
+.feature-img {
+    width: 220px;           
+    height: auto;           
+}
+
+.feature-text {
+    flex: 1;                /* テキストブロックが残りの利用可能なスペースをすべて使います */
+}
