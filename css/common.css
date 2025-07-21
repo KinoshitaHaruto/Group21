@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "utf-8"; 
 
 *,
 ::before,
@@ -18,11 +18,12 @@ a {
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif; 
     font-size: 16px;
     color: #000000;
     line-height: 1.6;
     background-color: #ffffff;
+
 }
 
 img {
@@ -50,7 +51,7 @@ img {
 
 .header-logo {
     display: block;
-    width: 100px;
+    width: 170px;
 }
 
 .site-menu ul {
@@ -63,47 +64,49 @@ img {
 }
 
 .site-menu ul li a {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif; 
     font-size: 16px;
     color: #333333;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; 
 }
 
 .site-menu ul li a:hover {
-    color: #007bff;
+    color: #007bff; 
 }
+
 
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    background-color: #007bff;
-    color: #ffffff;
+    background-color: #007bff; 
+    color: #ffffff; 
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
     border: none;
     cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
 }
 
 .main {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 50px; 
+    padding-bottom: 50px; 
     padding-left: 20px;
     padding-right: 20px;
-    max-width: 1200px;
+    max-width: 1200px; 
     margin-left: auto;
     margin-right: auto;
 }
 
+
 .footer {
-    color: #e0e0e0; /* フッター全体のテキスト色を明るいグレーに変更 */
+    color: #ffffff;
     background-color: #24211b;
     padding-top: 30px;
     padding-bottom: 15px;
@@ -125,13 +128,13 @@ img {
 }
 
 .social-icons a {
-    color: #e0e0e0; /* ソーシャルアイコンのテキスト色も明るいグレーに変更 */
+    color: #ffffff;
     font-size: 24px;
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #007bff; /* ホバー時の色は維持 */
+    color: #007bff;
 }
 
 .copyright {
@@ -190,7 +193,7 @@ img {
 
     .main {
         padding-top: 50px;
-        padding-bottom: 30px;
+        padding-bottom: 30px; 
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -207,7 +210,7 @@ img {
         display: block;
         width: 44px;
         height: 34px;
-        background-image: url(../images/common/icon-menu.png);
+        background-image: url(../images/common/icon-menu.png); 
         background-size: 50%;
         background-position: center;
         background-repeat: no-repeat;
