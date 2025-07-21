@@ -1,4 +1,14 @@
-@charset "utf-8";
+@charset "utf-8"; 
+
+.roboto-<uniquifier> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; 
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 
 *,
 ::before,
@@ -18,15 +28,23 @@ a {
 }
 
 body {
-    font-family: sans-serif;
-    font-size: 16pt;
+    font-family: "Roboto", sans-serif; 
+    font-size: 16px;
     color: #000000;
-    line-height: 1;
+    line-height: 1.6;
     background-color: #ffffff;
+
 }
 
 img {
     max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header-inner {
@@ -39,10 +57,6 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.toggle-menu-button {
-    display: none;
 }
 
 .header-logo {
@@ -60,7 +74,83 @@ img {
 }
 
 .site-menu ul li a {
-    font-family: 'Cherry Bomb One', cursive;
+    font-family: "Roboto", sans-serif; 
+    font-size: 16px;
+    color: #333333;
+    transition: color 0.3s ease; 
+}
+
+.site-menu ul li a:hover {
+    color: #007bff; 
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff; 
+    color: #ffffff; 
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
+}
+
+.main {
+    padding-top: 50px; 
+    padding-bottom: 50px; 
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.footer {
+    color: #ffffff;
+    background-color: #24211b;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    display: block;
+    width: 235px;
+    margin-top: 90px;
+}
+
+.social-icons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+.copyright {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 90px;
 }
 
 @media (max-width: 800px) {
@@ -112,7 +202,10 @@ img {
     }
 
     .main {
-        padding-top: 50px;;
+        padding-top: 50px;
+        padding-bottom: 30px; 
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .footer-logo {
@@ -127,7 +220,7 @@ img {
         display: block;
         width: 44px;
         height: 34px;
-        background-image: url(../images/common/icon-menu.png);
+        background-image: url(../images/common/icon-menu.png); 
         background-size: 50%;
         background-position: center;
         background-repeat: no-repeat;
@@ -138,68 +231,13 @@ img {
     }
 }
 
-.footer {
-    color: #ffffff;
-    background-color: #24211b;
-    padding-top: 30px;
-    padding-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-logo {
-    display: block;
-    width: 235px;
-    margin-top: 90px;
-}
-
-.copyright {
-    font-size: 14pt;
-    font-weight: bold;
-    margin-top: 90px;
-}
-
-@media (max-width: 800px) {
-    .site-menu ul {
-        display: block;
-        text-align: center;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    .site-menu li {
-        margin-top: 20px;
-    }
-
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: #ffffff;
-        height: 50px;
-        z-index: 10;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .header-inner {
-        padding-left: 20px;
-        padding-right: 20px;
-        height: 100%;
-    }
-
-    .header-logo {
-        width: 100px;
-    }
-
-    .main {
-        padding-top: 50px;
-    }
-
-    .footer-logo {
-        margin-top: 60px;
-    }
-
-    .copyright {
-        margin-top: 50px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
