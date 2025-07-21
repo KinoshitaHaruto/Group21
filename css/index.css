@@ -74,6 +74,11 @@ img {
     max-width: 100%;
 }
 
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
 .header-inner {
     max-width: 1200px;
     height: 110px;
@@ -85,6 +90,7 @@ img {
     justify-content: space-between;
     align-items: center;
 }
+
 
 .toggle-menu-button {
     display: none;
@@ -107,6 +113,26 @@ img {
 .site-menu ul li a {
     font-family:  "Montserrat", sans-serif;
 }
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
 .social-icons a:hover {
     color: #007bff;
 }
