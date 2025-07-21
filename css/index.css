@@ -107,6 +107,9 @@ img {
 .site-menu ul li a {
     font-family:  "Montserrat", sans-serif;
 }
+.social-icons a:hover {
+    color: #007bff;
+}
 
 @media (max-width: 800px) {
     .site-menu ul {
