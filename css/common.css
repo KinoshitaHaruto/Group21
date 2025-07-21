@@ -51,7 +51,7 @@ img {
 
 .header-logo {
     display: block;
-    width: 100px;
+    width: 170px;
 }
 
 .site-menu ul {
@@ -70,6 +70,29 @@ img {
     transition: color 0.3s ease; 
 }
 
+.site-menu ul li a:hover {
+    color: #007bff; 
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff; 
+    color: #ffffff; 
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
+}
 
 .main {
     padding-top: 50px; 
