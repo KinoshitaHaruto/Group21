@@ -1,20 +1,15 @@
-@charset "utf-8"; /* 常にファイルの先頭に */
-
-/* Google Fontsのインポートの準備 (HTMLの<head>セクションに<link>タグを追加するか、CSSの先頭で@importを使用してください) */
-/* 例: @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
-/* 例: @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap'); */
-
+@charset "utf-8"; 
 
 .roboto-<uniquifier> {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>; /* ここを400, 700などの数値に置き換えてください */
+  font-weight: 400; 
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
 }
 
-/* グローバルリセットと基本スタイル */
+
 *,
 ::before,
 ::after {
@@ -33,13 +28,12 @@ a {
 }
 
 body {
-    font-family: "Roboto", sans-serif; /* bodyのフォントをRobotoに設定 */
+    font-family: "Roboto", sans-serif; 
     font-size: 16px;
     color: #000000;
     line-height: 1.6;
     background-color: #ffffff;
-    /* オプション: ロード時のフェードインアニメーション */
-    /* animation: fadeIn 1s ease-out forwards; */
+
 }
 
 img {
@@ -48,7 +42,6 @@ img {
     vertical-align: bottom;
 }
 
-/* ヘッダーセクションのスタイル */
 .header {
     background-color: #ffffff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -80,50 +73,48 @@ img {
     margin-right: 20px;
 }
 
-/* ナビゲーションメニューのリンクスタイルとホバーエフェクト */
 .site-menu ul li a {
-    font-family: "Roboto", sans-serif; /* Cherry Bomb OneからRobotoに変更 */
+    font-family: "Roboto", sans-serif; 
     font-size: 16px;
-    color: #333333; /* デフォルトの色 */
-    transition: color 0.3s ease; /* 色変化を滑らかに */
+    color: #333333;
+    transition: color 0.3s ease; 
 }
 
 .site-menu ul li a:hover {
-    color: #007bff; /* ホバー時の色 (例: 青) */
+    color: #007bff; 
 }
 
-/* 汎用ボタンのスタイル */
+
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    background-color: #007bff; /* ボタンの背景色 */
-    color: #ffffff; /* ボタンのテキスト色 */
+    background-color: #007bff; 
+    color: #ffffff; 
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* スムーズな変化 */
+    transition: background-color 0.3s ease, transform 0.2s ease; 
     border: none;
     cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #0056b3; /* ホバー時の背景色 */
-    transform: translateY(-2px); /* 少し上に移動するアニメーション */
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
 }
 
-/* メインコンテンツセクションのスタイル調整 */
 .main {
-    padding-top: 50px; /* 固定ヘッダーの高さ分 */
-    padding-bottom: 50px; /* フッターとの間隔 */
+    padding-top: 50px; 
+    padding-bottom: 50px; 
     padding-left: 20px;
     padding-right: 20px;
-    max-width: 1200px; /* コンテンツの最大幅 */
+    max-width: 1200px; 
     margin-left: auto;
     margin-right: auto;
 }
 
-/* フッターセクションのスタイル */
+
 .footer {
     color: #ffffff;
     background-color: #24211b;
@@ -140,7 +131,6 @@ img {
     margin-top: 90px;
 }
 
-/* ソーシャルアイコンのスタイル (HTMLに要素を追加する必要あり) */
 .social-icons {
     margin-top: 30px;
     display: flex;
@@ -163,7 +153,6 @@ img {
     margin-top: 90px;
 }
 
-/* --- レスポンシブデザインのためのメディアクエリ --- */
 @media (max-width: 800px) {
     .site-menu ul {
         display: block;
@@ -214,7 +203,7 @@ img {
 
     .main {
         padding-top: 50px;
-        padding-bottom: 30px; /* モバイルでのパディング調整 */
+        padding-bottom: 30px; 
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -231,7 +220,7 @@ img {
         display: block;
         width: 44px;
         height: 34px;
-        background-image: url(../images/common/icon-menu.png); /* 画像のパスを適切に設定 */
+        background-image: url(../images/common/icon-menu.png); 
         background-size: 50%;
         background-position: center;
         background-repeat: no-repeat;
@@ -242,7 +231,6 @@ img {
     }
 }
 
-/* オプション: ロード時のフェードインアニメーションのキーフレーム */
 @keyframes fadeIn {
     from {
         opacity: 0;
