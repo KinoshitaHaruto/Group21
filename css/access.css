@@ -1,115 +1,52 @@
 .title {
-    height: 310px;
-    background-image: url(../images/history_back.png);
+    height: 310px; 
+    background-image: url(../images/access_back.png); 
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
-    color: #ffffff;
-    text-shadow: 1px 1px 10px #4b2c14;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    color: #ffffff; 
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); /* 文字に影をつけて読みやすく */
+    /* Cherry Bomb One フォントをここで適用 */
+    font-family: 'Cherry Bomb One', cursive; /* h1以外のテキストにも適用 */
 }
 
 .title h1 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 32pt;
+    font-size: 38pt; /* アクセスタイトルを大きく */
     font-weight: bold;
+    margin-bottom: 10px; /* 下のテキストとの間隔 */
 }
 
 .title p {
-    font-size: 14pt;
-    margin-top: 15px;
+    font-size: 16pt; /* 説明文のフォントサイズ */
+    text-align: center; /* テキストを中央揃え */
+    max-width: 800px; /* 広がりすぎないように最大幅を設定 */
+    padding: 0 20px; /* 左右の余白 */
 }
 
-.feature {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 930px;
-    max-width: 90%;
-    margin-top: 75px;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: flex-start;
+/* --- マップセクション --- */
+.map {
+    max-width: 930px; /* マップコンテナの最大幅 */
+    width: 95%; /* 小さい画面でのレスポンシブ幅 */
+    margin: 75px auto; /* 上下に余白、左右中央寄せ */
+    text-align: center; /* 見出しを中央揃え */
 }
 
-.feature-text {
-    max-width: 500px;
-    margin-right: 40px;
+.map h2 {
+    font-size: 28px; /* マップ見出しのフォントサイズ */
+    margin-bottom: 25px; /* iframeとの間隔 */
+    color: #333;
+    /* Cherry Bomb One フォントを適用 */
+    font-family: 'Cherry Bomb One', cursive;
 }
 
-.reverse {
-    flex-direction: row-reverse;
-}
-
-.reverse .feature-text {
-    margin-left: 40px;
-    margin-right: 0;
-}
-
-.feature-text h2 {
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 30px;
-}
-
-.feature-text h2::after {
-    content: "";
-    display: block;
-    width: 36px;
-    height: 3px;
-    background-color: #000000;
-    margin-top: 20px;
-}
-
-.feature-text p {
-    font-size: 15px;
-    line-height: 28px;
-    margin-top: 25px;
-}
-
-.movie {
-    width: 930px;
-    max-width: 90%;
-    background-color: #f8f8f8;
-    padding: 50px 60px;
-    margin-top: 55px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.movie h2 {
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.movie h2::after {
-    content: "";
-    display: block;
-    width: 36px;
-    height: 3px;
-    background-color: #000000;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.movie iframe {
-    display: block;
-    width: 100%;
-    height: 450px;
-    margin-top: 30px;
-}
-
-.movie p {
-    font-size: 15px;
-    line-height: 28px;
-    margin-top: 20px;
-}
-
-.footer {
-    margin-top: 100px;
+.map iframe {
+    display: block; /* ブロック要素にして幅100%を適用 */
+    width: 100%; /* 親要素の幅いっぱいに表示 */
+    height: 600px; /* iframeの固定高さ */
+    border: 0; /* 境界線をなくす */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
 }
