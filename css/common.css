@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+/* --- 全体のリセットと基本設定 --- */
+/*
+ * 全ての要素に対してデフォルトのマージンとパディングをリセットし、
+ * ボックスサイズ計算方法をborder-boxに統一します。
+ * これにより、要素のサイズ計算が予測しやすくなります。
+ */
 *,
 ::before,
 ::after {
@@ -8,126 +14,149 @@
     box-sizing: border-box;
 }
 
+/* リストのスタイルを解除 */
 ul, ol {
     list-style: none;
 }
 
+/* リンクの下線を削除し、文字色を親要素から継承 */
 a {
     color: inherit;
     text-decoration: none;
 }
 
+/* --- body要素の基本スタイル --- */
+/*
+ * サイト全体のデフォルトフォント、文字色、背景色などを設定します。
+ */
 body {
-    font-family: sans-serif;
-    font-size: 16pt;
-    color: #000000;
-    line-height: 1;
-    background-color: #ffffff;
+    font-family: sans-serif; /* 全体のデフォルトフォント。読みやすい一般的なゴシック体 */
+    font-size: 16px; /* 基本となるフォントサイズ (ptではなくpx推奨) */
+    color: #000000; /* デフォルトの文字色 */
+    line-height: 1.6; /* 行の高さで可読性を向上 */
+    background-color: #ffffff; /* 背景色を白に */
 }
 
+/* 画像が親要素の幅からはみ出さないようにし、縦横比を維持 */
 img {
     max-width: 100%;
+    height: auto;
+    vertical-align: bottom; /* 画像と下要素の間に不要な隙間ができないようにする */
+}
+
+/* --- ヘッダー --- */
+/*
+ * ヘッダーは固定表示せず、通常フローで配置されることを想定しています。
+ * 背景色と軽い影で視認性を高めます。
+ */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* 軽い影で立体感を出す */
 }
 
 .header-inner {
-    max-width: 1200px;
-    height: 110px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 40px;
-    padding-right: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    max-width: 1200px; /* ヘッダー内容の最大幅 */
+    height: 110px; /* ヘッダーの高さ */
+    margin: 0 auto; /* 水平方向の中央寄せ */
+    padding: 0 40px; /* 左右のパディング */
+    display: flex; /* Flexboxでアイテムを横並びに */
+    justify-content: space-between; /* アイテムを両端に配置 */
+    align-items: center; /* アイテムを垂直方向の中央に揃える */
 }
 
+/* ヘッダーロゴのスタイル */
+.header-logo {
+    display: block;
+    width: 170px; /* ロゴの幅 */
+}
+
+/* ナビゲーションメニューのスタイル（PC版） */
+.site-menu ul {
+    display: flex; /* メニューアイテムを横並びに */
+}
+
+.site-menu ul li {
+    margin: 0 20px; /* メニューアイテム間の左右の余白 */
+}
+
+/* ナビゲーションリンクのスタイル */
+.site-menu ul li a {
+    font-family: 'Cherry Bomb One', cursive; /* Cherry Bomb Oneフォントを適用 */
+    font-size: 16px; /* ナビゲーションリンクのフォントサイズ */
+    transition: color 0.3s ease; /* ホバー時の色の変化を滑らかに */
+}
+
+.site-menu ul li a:hover {
+    color: #007bff; /* ホバー時の色 (例) */
+}
+
+/* ハンバーガーメニューボタンはPC版では非表示 */
 .toggle-menu-button {
     display: none;
 }
 
-.header-logo {
-    display: block;
-    width: 170px;
-}
-
-.site-menu ul {
+/* --- フッター --- */
+.footer {
+    color: #ffffff; /* 文字色を白に */
+    background-color: #24211b; /* 背景色を濃いグレーに */
+    padding-top: 30px;
+    padding-bottom: 15px;
     display: flex;
+    flex-direction: column; /* アイテムを縦に並べる */
+    align-items: center; /* アイテムを水平方向の中央に揃える */
 }
 
-.site-menu ul li {
-    margin-left: 20px;
-    margin-right: 20px;
+/* フッターロゴのスタイル */
+.footer-logo {
+    display: block;
+    width: 235px; /* フッターロゴの幅 */
+    margin-top: 90px; /* 上部の余白 */
+    margin-bottom: 30px; /* 下部に余白を追加 (著作権表示との間) */
 }
 
-.site-menu ul li a {
-    font-family: 'Cherry Bomb One', cursive;
+/* 著作権表示のスタイル */
+.copyright {
+    font-size: 14px; /* フォントサイズ (ptからpxに変換) */
+    font-weight: bold;
+    margin-top: 10px; /* 上部の余白を調整 */
+    padding-bottom: 10px; /* フッター下部に少しパディング */
 }
 
+---
+
+## `@media (max-width: 800px)` モバイル向けスタイル
+
+800px以下の画面幅でのレイアウト調整です。
+
+```css
+/* --- モバイル版レイアウト (画面幅800px以下) --- */
 @media (max-width: 800px) {
-    .site-menu ul {
-        display: block;
-        text-align: center;
-    }
-
-    .site-menu li {
-        margin-top: 20px;
-    }
-
+    /* ヘッダー */
     .header {
-        position: fixed;
+        position: fixed; /* ヘッダーを固定表示 */
         top: 0;
         left: 0;
         right: 0;
-        background-color: #ffffff;
-        height: 50px;
-        z-index: 10;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        height: 50px; /* モバイル時のヘッダーの高さ */
+        z-index: 10; /* 他の要素より手前に表示 */
     }
 
     .header-inner {
-        padding-left: 20px;
-        padding-right: 20px;
-        height: 100%;
-        position: relative;
-    }
-
-    .header-site-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        color: #ffffff;
-        background-color: #736e62;
-        padding-top: 30px;
-        padding-bottom: 50px;
-        display: none;
-    }
-
-    .header-site-menu.is-show {
-        display: block;
+        padding: 0 20px; /* 左右のパディングを調整 */
+        height: 100%; /* 親要素の高さに合わせる */
+        position: relative; /* ヘッダーメニューの基準位置とする */
     }
 
     .header-logo {
-        width: 100px;
+        width: 100px; /* ロゴの幅を小さく */
     }
 
-    .main {
-        padding-top: 50px;;
-    }
-
-    .footer-logo {
-        margin-top: 60px;
-    }
-
-    .copyright {
-        margin-top: 50px;
-    }
-
+    /* ハンバーガーメニューボタンの表示 */
     .toggle-menu-button {
-        display: block;
+        display: block; /* ボタンを表示 */
         width: 44px;
         height: 34px;
-        background-image: url(../images/common/icon-menu.png);
+        background-image: url(../images/common/icon-menu.png); /* メニューアイコン */
         background-size: 50%;
         background-position: center;
         background-repeat: no-repeat;
@@ -135,71 +164,46 @@ img {
         border: none;
         border-radius: 0;
         outline: none;
-    }
-}
-
-.footer {
-    color: #ffffff;
-    background-color: #24211b;
-    padding-top: 30px;
-    padding-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-logo {
-    display: block;
-    width: 235px;
-    margin-top: 90px;
-}
-
-.copyright {
-    font-size: 14pt;
-    font-weight: bold;
-    margin-top: 90px;
-}
-
-@media (max-width: 800px) {
-    .site-menu ul {
-        display: block;
-        text-align: center;
+        cursor: pointer; /* カーソルをポインターにする */
     }
 
-    .site-menu li {
-        margin-top: 20px;
-    }
-
-    .header {
-        position: fixed;
-        top: 0;
+    /* ヘッダー内のサイトメニュー（モバイル時のみ表示・非表示を切り替える） */
+    .header-site-menu {
+        position: absolute;
+        top: 100%; /* ヘッダーのすぐ下に配置 */
         left: 0;
         right: 0;
-        background-color: #ffffff;
-        height: 50px;
-        z-index: 10;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        color: #ffffff; /* 文字色を白に */
+        background-color: #736e62; /* 背景色 */
+        padding: 30px 0 50px; /* 上下左右のパディング */
+        display: none; /* 初期状態では非表示（JavaScriptで切り替え） */
     }
 
-    .header-inner {
-        padding-left: 20px;
-        padding-right: 20px;
-        height: 100%;
+    .header-site-menu.is-show {
+        display: block; /* JavaScriptでis-showクラスが付与されたら表示 */
     }
 
-    .header-logo {
-        width: 100px;
+    .site-menu ul {
+        display: block; /* メニューアイテムを縦に並べる */
+        text-align: center; /* テキストを中央揃え */
     }
 
+    .site-menu ul li {
+        margin: 20px 0; /* メニューアイテム間の上下の余白 */
+    }
+
+    /* mainコンテンツのパディング（固定ヘッダーに隠れないように） */
     .main {
-        padding-top: 50px;
+        padding-top: 50px; /* ヘッダーの高さ分、上部に余白を確保 */
     }
 
+    /* フッターロゴの調整 */
     .footer-logo {
-        margin-top: 60px;
+        margin-top: 60px; /* モバイル時の上部余白 */
     }
 
+    /* 著作権表示の調整 */
     .copyright {
-        margin-top: 50px;
+        margin-top: 50px; /* モバイル時の上部余白 */
     }
 }
