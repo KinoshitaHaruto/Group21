@@ -1,6 +1,10 @@
 .title {
     height: 310px;
+<<<<<<< HEAD
+    background-image: url(../images/faculty.png);
+=======
     background-image: url(../images/history_back.png);
+>>>>>>> dc9c6fc999b907ad7b477c2da162840deb3e490b
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
